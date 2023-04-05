@@ -1,0 +1,38 @@
+CREATE TABLE Favorite (
+    adult               INTEGER NOT NULL DEFAULT 0, -- bool
+    backdropPath        TEXT NOT NULL DEFAULT "",
+    genreIds            TEXT NOT NULL DEFAULT "",
+    id                  INTEGER NOT NULL PRIMARY KEY,
+    originalLanguage    TEXT NOT NULL DEFAULT "",
+    originalTitle       TEXT NOT NULL DEFAULT "",
+    overview            TEXT NOT NULL DEFAULT "",
+    popularity          REAL NOT NULL,
+    posterPath          TEXT NOT NULL DEFAULT "",
+    releaseDate         TEXT NOT NULL DEFAULT "",
+    title               TEXT NOT NULL DEFAULT "",
+    video               INTEGER NOT NULL DEFAULT 0, -- bool
+    voteAverage         REAL NOT NULL DEFAULT 0.0,
+    voteCount           INTEGER NOT NULL DEFAULT 0,
+    budget              TEXT NOT NULL DEFAULT "",
+    revenue             TEXT NOT NULL DEFAULT ""
+);
+
+
+-- Functions
+getAllFavorites:
+SELECT * FROM Favorite;
+
+getOneFilm:
+SELECT * FROM Favorite
+WHERE id = ?;
+
+insertFilm:
+INSERT OR REPLACE INTO Favorite(adult,backdropPath,genreIds,id,originalLanguage,originalTitle,overview,popularity,posterPath,releaseDate,title,video,voteAverage,voteCount,budget,revenue)
+VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+
+removeFilm:
+DELETE FROM Favorite
+WHERE id = ?;
+
+removeAllFilms:
+DELETE FROM Favorite;

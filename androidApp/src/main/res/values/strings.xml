@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_error_title">Something is wrong</string>
+    <string name="dialog_error_btn_new_search">New search</string>
+    <string name="dialog_error_btn_retry">Retry</string>
+    <string name="view_result_no_data">Sorry - no results for you search.</string>
+    <string name="view_search_placeholder">Searching for…</string>
+    <string name="view_search_btn_search">Search</string>
+    <string name="screen_detail_no_data">Sorry no data to display.</string>
+    <string name="activity_topbar_title">Films</string>
+    <string name="activity_settings_topbar_title">Settings</string>
+    <string name="app_name">Films</string>
+    <string name="screen_detail_add_favorite">Add to favorites</string>
+    <string name="screen_detail_remove_favorite">Remove from favorites</string>
+    <string name="screen_title_search">Search</string>
+    <string name="screen_title_favorite">Favorite</string>
+</resources>
