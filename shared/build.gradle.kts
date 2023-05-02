@@ -29,6 +29,7 @@ kotlin {
     val koinVersion = "3.2.0"
     val ktorVersion = "2.2.3"
     val storeVersion = "5.0.0-alpha04"
+    val mockkVersion = "1.13.4"
 
     sourceSets {
         val commonMain by getting {
@@ -63,7 +64,21 @@ kotlin {
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
             }
         }
-//        val androidUnitTest by getting
+        val androidUnitTest by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-mock:$ktorVersion")
+                implementation("org.jetbrains.kotlin:kotlin-test")
+                implementation("app.cash.sqldelight:sqlite-driver:$sqlDelightVersion")
+
+                // Koin testing tools
+                implementation("io.insert-koin:koin-test:$koinVersion")
+                // Needed JUnit version
+                implementation("io.insert-koin:koin-test-junit4:$koinVersion")
+                // MockK
+                implementation("io.mockk:mockk:${mockkVersion}")
+                implementation("androidx.test:core:1.5.0")
+            }
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
 //        val iosSimulatorArm64Main by getting
